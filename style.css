@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #A8DADC;
+    --cross-color: #1D3557;
+    --circle-color: #457B9D;
+    --black-color: black;
+    --main-font: "Bitcount Prop Single", system-ui;
+
+}
+
+body {
+    background-color: var(--main-color);
+}
+
+.head-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vmin;
+}
+
+.game-play-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+}
+
+.player-vs-player,
+.player-vs-computer {
+    background-color: var(--circle-color);
+    padding: 2vmin 4vmin;
+    border-radius: 50px;
+    border: none;
+    font-size: 3vmin;
+    font-family: var(--main-font);
+    transition: all .4s ease;
+}
+
+.start-btn button {
+    font-family: var(--main-font);
+    font-size: 4vmin;
+    text-decoration: none;
+    color: black;
+    background-color: var(--circle-color);
+    padding: 2vmin 5vmin;
+    border-radius: 50px;
+    border: none;
+    transition: all .4s ease;
+    display: none;
+}
+
+
+.start-btn button:hover,
+.player-vs-player:hover,
+.player-vs-computer:hover {
+    color: white;
+    background-color: var(--cross-color);
+}
+
+.header-game-name {
+    font-family: var(--main-font);
+    font-size: 10vmin;
+    color: var(--cross-color);
+}
+
+.game-name {
+    font-family: var(--main-font);
+    font-size: 5vmin;
+    text-align: center;
+    padding-top: 5vmin;
+    transition: all .5s ease;
+}
+
+.container {
+    margin-top: 5vmin;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2vmin;
+}
+
+.box {
+    height: 19vmin;
+    width: 19vmin;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--circle-color);
+    background-color: white;
+    font-size: 8vmin;
+    color: var(--circle-color);
+}
+
+.turn-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vmin;
+}
+.turn-indicator div{
+    position: relative;
+    width: 150px;
+    margin-left: 30px;
+}
+.turn-indicator img {
+    padding: 1vmin 2vmin;
+}
+.turn-indicator div::after{
+    content: "";
+    background-color: var(--cross-color);
+    border-radius: 20px;
+    width: 5vmin;
+    height: 3px;
+    position: absolute;
+    left: 6%;
+    bottom: 0;
+    transition: all .4s ease-in-out;
+}
+.turn-indicator div.active::after {
+    left: 45%;
+}
+
+.reset-btn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 6vmin;
+}
+
+.reset-btn button {
+    font-family: var(--main-font);
+    padding: 1vmin 4vmin;
+    border-radius: 20px;
+    font-size: 2vmin;
+    border: 1px solid var(--cross-color);
+    transition: all .5s ease-in-out;
+    background: transparent;
+}
+
+.reset-btn button:hover {
+    background-color: var(--cross-color);
+    border: none;
+    color: white;
+}
